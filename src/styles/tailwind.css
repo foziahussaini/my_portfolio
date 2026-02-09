@@ -1,0 +1,14 @@
+
+@tailwind utilities;
+
+@import 'tw-animate-css';
+
+/* 1. Import Tailwind v4 core */
+@import "tailwindcss";
+
+/* 2. Import the default theme (this provides the spacing variables) */
+@import "tailwindcss/theme" layer(theme);
+
+/* 3. If you want to keep source(none), you must manually add your src folder */
+@source "../**/*.{js,jsx,ts,tsx,html}";
+@source "../components/**/*.{js,jsx,ts,tsx,html}";
