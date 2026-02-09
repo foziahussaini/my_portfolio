@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Menu, X, Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
 import { ImageWithFallback } from './components/figma/ImageWithFallback';
+import './App.css';
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,22 +37,43 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+    <div className="body">
+      {/* header */}
+      <nav className="fixed top-0 w-full bg-sky-200/55 backdrop-blur-sm shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <a href="#home" className="text-xl text-gray-900">Portfolio</a>
-            
-            {/* Desktop Navigation */}
+            {/* header Navigation bar */}
             <div className="hidden md:flex space-x-8">
               <a href="#about" className="text-gray-700 hover:text-gray-900 transition-colors">About</a>
               <a href="#projects" className="text-gray-700 hover:text-gray-900 transition-colors">Projects</a>
               <a href="#skills" className="text-gray-700 hover:text-gray-900 transition-colors">Skills</a>
               <a href="#contact" className="text-gray-700 hover:text-gray-900 transition-colors">Contact</a>
             </div>
+            <div className="icons">
+              <a 
+                href="https://github.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                aria-label="GitHub"
+              >
+                <Github className="w-5 h-5 text-gray-700" />
+              </a>  
+              <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5 text-gray-700" />
+              </a>    
+              <a href="discord.com">
+                <Mail className="w-5 h-5 text-gray-700" />
+              </a>
+            </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button hamburger part */}
             <button 
               className="md:hidden p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -73,13 +95,13 @@ export default function App() {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* body Hero Section */}
       <section id="home" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-4">
-                Hi, I'm <span className="text-blue-600">Fozia Hussaini</span>
+                <span className="text-blue-600">Fozia Hussaini</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8">
                 Full-Stack Developer & UI/UX Enthusiast
